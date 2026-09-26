@@ -1,0 +1,131 @@
+{
+  "total_requests": 30,
+  "blocked_requests": 25,
+  "block_rate": 0.8333333333333334,
+  "rate_limit_hits": 5,
+  "judge_checks": 30,
+  "judge_fails": 0,
+  "judge_fail_rate": 0.0,
+  "alerts": [
+    {
+      "metric": "block_rate",
+      "value": 0.5454545454545454,
+      "threshold": 0.5,
+      "message": "Block rate 0.55 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.5833333333333334,
+      "threshold": 0.5,
+      "message": "Block rate 0.58 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.6153846153846154,
+      "threshold": 0.5,
+      "message": "Block rate 0.62 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.6428571428571429,
+      "threshold": 0.5,
+      "message": "Block rate 0.64 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.6666666666666666,
+      "threshold": 0.5,
+      "message": "Block rate 0.67 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.6875,
+      "threshold": 0.5,
+      "message": "Block rate 0.69 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7058823529411765,
+      "threshold": 0.5,
+      "message": "Block rate 0.71 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7222222222222222,
+      "threshold": 0.5,
+      "message": "Block rate 0.72 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7368421052631579,
+      "threshold": 0.5,
+      "message": "Block rate 0.74 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.75,
+      "threshold": 0.5,
+      "message": "Block rate 0.75 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7619047619047619,
+      "threshold": 0.5,
+      "message": "Block rate 0.76 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7727272727272727,
+      "threshold": 0.5,
+      "message": "Block rate 0.77 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.782608695652174,
+      "threshold": 0.5,
+      "message": "Block rate 0.78 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.7916666666666666,
+      "threshold": 0.5,
+      "message": "Block rate 0.79 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8,
+      "threshold": 0.5,
+      "message": "Block rate 0.80 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8076923076923077,
+      "threshold": 0.5,
+      "message": "Block rate 0.81 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8148148148148148,
+      "threshold": 0.5,
+      "message": "Block rate 0.81 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8214285714285714,
+      "threshold": 0.5,
+      "message": "Block rate 0.82 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8275862068965517,
+      "threshold": 0.5,
+      "message": "Block rate 0.83 exceeds threshold 0.50"
+    },
+    {
+      "metric": "block_rate",
+      "value": 0.8333333333333334,
+      "threshold": 0.5,
+      "message": "Block rate 0.83 exceeds threshold 0.50"
+    }
+  ]
+}

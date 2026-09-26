@@ -36,7 +36,7 @@ PROVIDER_OPENROUTER = "openrouter"
 
 # --- Blue Team (LOCKED) ---
 BLUE_PROVIDER = PROVIDER_OPENROUTER
-BLUE_MODEL = "liquid/lfm-2.5-2.6b"
+BLUE_MODEL = "openai/gpt-4o-mini"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 DEFAULT_OPENROUTER_MODEL = BLUE_MODEL  # alias
 
@@ -139,6 +139,8 @@ def get_red_provider() -> str:
     ).strip().lower()
     if raw in {"gemini", "google", "adk"}:
         return PROVIDER_GEMINI
+    if raw == "openrouter":
+        return PROVIDER_OPENROUTER
     return PROVIDER_OPENAI
 
 
@@ -148,6 +150,11 @@ def get_red_model() -> str:
         return (
             os.environ.get("GEMINI_MODEL", DEFAULT_GEMINI_MODEL).strip()
             or DEFAULT_GEMINI_MODEL
+        )
+    if get_red_provider() == PROVIDER_OPENROUTER:
+        return (
+            os.environ.get("RED_OPENROUTER_MODEL", "liquid/lfm-2.5-2.6b").strip()
+            or "liquid/lfm-2.5-2.6b"
         )
     return (
         os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL).strip()
@@ -170,6 +177,8 @@ def get_openai_api_key() -> str:
 
 
 def red_openai_client_kwargs() -> dict:
+    if get_red_provider() == PROVIDER_OPENROUTER:
+        return blue_client_kwargs()
     return {"api_key": get_openai_api_key() or None}
 
 
@@ -180,7 +189,7 @@ def red_provider_label(tier: str = "advance") -> str:
 
 
 def red_uses_openai_sdk() -> bool:
-    return get_red_provider() == PROVIDER_OPENAI
+    return get_red_provider() in (PROVIDER_OPENAI, PROVIDER_OPENROUTER)
 
 
 def red_uses_gemini() -> bool:

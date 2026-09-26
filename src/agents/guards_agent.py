@@ -10,6 +10,7 @@ src/assignment/ are separate from this reference hard target.
 from __future__ import annotations
 
 import re
+import unicodedata
 
 from google.adk.agents import llm_agent
 from google.adk import runners
@@ -105,17 +106,18 @@ def detect_injection_strong(text: str) -> bool:
 def topic_filter_strong(text: str) -> bool:
     """Return True if input should be BLOCKED."""
     lower = text.lower()
-    if any(b in lower for b in BLOCKED_TOPICS):
+    normalized = unicodedata.normalize('NFKD', lower).encode('ASCII', 'ignore').decode('utf-8')
+    if any(b in lower or b in normalized for b in BLOCKED_TOPICS):
         return True
     # Allow short banking questions; block if no banking signal and looks extractive
-    if any(a in lower for a in ALLOWED_TOPICS):
+    if any(a in lower or a in normalized for a in ALLOWED_TOPICS):
         return False
     # Pure extraction / meta questions without banking keywords
     extractive = (
         "password", "api key", "system prompt", "hướng dẫn", "mật khẩu",
         "secret", "credential", "internal", "config",
     )
-    if any(e in lower for e in extractive):
+    if any(e in lower or e in normalized for e in extractive):
         return True
     # Off-topic (no allowed banking keyword)
     return True
